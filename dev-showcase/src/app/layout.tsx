@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Head from "./head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="min-h-screen bg-slate-50 text-slate-900">
+      <Head />
+      <body className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900">
         <header className="flex items-center justify-between p-4 border-b border-slate-200">
           <h1 className="text-2xl font-bold">DevShowcase</h1>
           <Link href="/projects">
